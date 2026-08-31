@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#05070f" />
+  <title>吴倩婷 · 个人主页</title>
+  <meta name="description" content="吴倩婷的个人主页，桂林电子科技大学计算机科学与技术（本科），专注 AI 应用与全栈开发。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- 星空 / 银河画布背景 -->
+  <!-- Three.js 银河螺旋星云粒子背景（由 galaxy3d.js 动态创建容器） -->
+
+  <!-- 载入遮罩 -->
+  <div id="loader" aria-hidden="true">
+    <div class="loader-ring"></div>
+    <div class="loader-text">SIGNAL_//_ESTABLISHING</div>
+  </div>
+
+  <!-- 自定义光标光晕 -->
+  <div id="cursor-glow" aria-hidden="true"></div>
+
+  <!-- 顶部导航 -->
+  <header id="nav">
+    <nav class="nav-inner">
+      <a href="#hero" class="brand" data-scroll>
+        <span class="brand-mark">◇</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about" class="nav-link" data-scroll>关于</a></li>
+        <li><a href="#skills" class="nav-link" data-scroll>技能</a></li>
+        <li><a href="#timeline" class="nav-link" data-scroll>经历</a></li>
+        <li><a href="#projects" class="nav-link" data-scroll>作品</a></li>
+        <li><a href="#contact" class="nav-link nav-cta" data-scroll>联系</a></li>
+      </ul>
+      <button id="menu-toggle" aria-label="切换菜单" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <div id="pages">
+    <main id="track" class="track">
+    <!-- Hero -->
+    <section id="hero" class="section hero page">
+      <div class="hero-orbit" aria-hidden="true">
+        <div class="orbit orbit-1"></div>
+        <div class="orbit orbit-2"></div>
+        <div class="orbit orbit-3"></div>
+      </div>
+      <div class="hero-content">
+        <div class="hero-grid">
+        <div class="hero-left">
+          <p class="hero-badge"><span class="badge-dot"></span> GREETINGS FROM <span class="accent">EARTH-1</span></p>
+          <figure class="hero-avatar">
+            <img src="images/avatar.jpg" alt="吴倩婷的头像" />
+          </figure>
+          <h1 class="hero-title">
+            <span class="line">HI, I'M</span>
+            <span class="line name" id="hero-name">吴倩婷<span class="cursor">_</span>
+          </h1>
+        </div>
+          <div class="hero-right">
+            <p class="hero-role">
+              <span class="hero-facts" id="hero-facts">
+                <!-- 由 main.js 从 CONFIG 填充基础信息 -->
+              </span>
+            </p>
+            <p class="hero-desc" id="hero-desc">
+              桂林电子科技大学 · 计算机科学与技术（本科）。专注 AI 应用与全栈开发，把好奇心打磨成一个个能落地的产品。
+            </p>
+            <div class="hero-actions">
+              <a href="#projects" class="btn btn-primary" data-scroll>
+                <span>查看作品</span>
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+              <a href="#contact" class="btn btn-ghost" data-scroll>与我联系</a>
+            </div>
+            <div class="hero-meta" id="hero-meta"></div>
+          </div>
+        </div>
+      </div>
+       <a href="#skills" class="scroll-hint" data-scroll aria-label="向下滚动">
+        <span class="mouse"><span class="wheel"></span>
+        <span class="hint-text">SCROLL</span>
+      </a>
+    </section>
+
+    <!-- About -->
+    
+
+    <!-- Skills -->
+    <section id="skills" class="section page">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-index">01</span>
+          <h2 class="section-title">技能矩阵</h2>
+          <span class="section-line"></span>
+        </div>
+        <div class="skills-grid" id="skills-grid"></div>
+      </div>
+    </section>
+
+    <!-- Timeline -->
+    <section id="timeline" class="section page">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-index">02</span>
+          <h2 class="section-title">航行轨迹</h2>
+          <span class="section-line"></span>
+        </div>
+        <div class="timeline" id="timeline-list"></div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section page">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-index">03</span>
+          <h2 class="section-title">代表作品</h2>
+          <span class="section-line"></span>
+        </div>
+        <div class="projects-grid" id="projects-grid"></div>
+      </div>
+    </section>
+<section id="about" class="section page">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-index">04</span>
+          <h2 class="section-title">关于我</h2>
+          <span class="section-line"></span>
+        </div>
+        <div class="about-grid">
+          <div class="about-card reveal">
+            <div class="avatar" id="avatar"><span id="avatar-initial">星</span></div>
+            <ul class="facts" id="about-facts"></ul>
+          </div>
+          <div class="about-text reveal">
+            <p id="about-p1">
+              你好，我是 <strong class="accent">吴倩婷</strong>。桂林电子科技大学计算机科学与技术（本科）在读，
+              热衷于用技术把想法点亮——从一行代码到一个完整产品，专注 AI 应用与全栈开发，享受探索、拆解与重构的过程。
+            </p>
+            <p id="about-p2">
+              我相信优秀的产品来自对细节的执着与对用户的理解。不设限，是让我持续前进的燃料。
+            </p>
+            <a href="#contact" class="text-link" data-scroll>一起聊聊 →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Contact -->
+    <section id="contact" class="section contact-section page">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-index">05</span>
+          <h2 class="section-title">建立连接</h2>
+          <span class="section-line"></span>
+        </div>
+        <div class="contact-card reveal">
+          <p class="contact-lead">有没有想一起做的事？</p>
+          <a class="contact-mail" id="contact-mail" href="mailto:3113952602@qq.com">3113952602@qq.com</a>
+          <div class="socials" id="socials"></div>
+        </div>
+      </div>
+    </section>
+      <footer class="page footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> <span id="footer-name">吴倩婷</span> · 由银河系动效驱动</p>
+      <p class="footer-tag">BUILT WITH <span class="accent">◇</span> IN THE COSMOS</p>
+    </div>
+  </footer>
+    </main>
+  </div>
+
+  
+
+  <script src="js/vendor/three.min.js"></script>
+  <script src="js/galaxy3d.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
